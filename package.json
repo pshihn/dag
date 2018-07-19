@@ -2,10 +2,11 @@
   "name": "adag",
   "version": "0.0.1",
   "description": "Yet another directed acyclic graph library",
-  "main": "index.js",
-  "scripts": {
-    "test": "tsc && jest"
-  },
+  "main": "bin/dag.js",
+  "module": "bin/dag.js",
+  "jsnext:main": "bin/dag.js",
+  "types": "bin/dag.d.ts",
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pshihn/dag.git"

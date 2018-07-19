@@ -37,8 +37,24 @@ export class DAG<T> {
   }
 
   removeVertex(id: string) {
-    this.inEdges.delete(id);
-    this.outEdges.delete(id);
+    if (this.inEdges.has(id)) {
+      const ins = this.inEdges.get(id)!;
+      for (const other of ins) {
+        if (this.outEdges.has(other)) {
+          this.outEdges.get(other)!.delete(id);
+        }
+      }
+      this.inEdges.delete(id);
+    }
+    if (this.outEdges.has(id)) {
+      const ins = this.outEdges.get(id)!;
+      for (const other of ins) {
+        if (this.inEdges.has(other)) {
+          this.inEdges.get(other)!.delete(id);
+        }
+      }
+      this.outEdges.delete(id);
+    }
     this.vertices.delete(id);
   }
 
@@ -56,8 +72,8 @@ export class DAG<T> {
   removeEdge(edge: Edge) {
     if (this.inEdges.has(edge[1]))
       this.inEdges.get(edge[1])!.delete(edge[0]);
-    if (this.inEdges.has(edge[0]))
-      this.outEdges.get(edge[0])!.delete(edge[0]);
+    if (this.outEdges.has(edge[0]))
+      this.outEdges.get(edge[0])!.delete(edge[1]);
   }
 
   toposort(rootId: string): string[] {
