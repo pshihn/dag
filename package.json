@@ -1,0 +1,23 @@
+{
+  "name": "adag",
+  "version": "0.0.1",
+  "description": "Yet another directed acyclic graph library",
+  "main": "index.js",
+  "scripts": {
+    "test": "tsc && jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pshihn/dag.git"
+  },
+  "author": "Preet Shihn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pshihn/dag/issues"
+  },
+  "homepage": "https://github.com/pshihn/dag#readme",
+  "devDependencies": {
+    "tslint": "^5.11.0",
+    "typescript": "^2.9.2"
+  }
+}
