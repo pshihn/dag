@@ -16,5 +16,5 @@ export declare class DAG<T> {
     addEdge(...edges: Edge[]): void;
     removeEdge(edge: Edge): void;
     toposort(rootId: string): string[];
-    private doTopoSort(node);
+    private doTopoSort;
 }

@@ -2,11 +2,14 @@
   "name": "adag",
   "version": "0.0.1",
   "description": "Yet another directed acyclic graph library",
-  "main": "bin/dag.js",
-  "module": "bin/dag.js",
-  "jsnext:main": "bin/dag.js",
-  "types": "bin/dag.d.ts",
-  "scripts": {},
+  "main": "dist/dag.umd.js",
+  "umd:main": "dist/dag.umd.js",
+  "module": "dist/dag.m.js",
+  "jsnext:main": "dist/dag.js",
+  "types": "dist/dag.d.ts",
+  "scripts": {
+    "build": "tsc && rollup -c"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pshihn/dag.git"
@@ -18,6 +21,8 @@
   },
   "homepage": "https://github.com/pshihn/dag#readme",
   "devDependencies": {
+    "rollup": "^0.63.4",
+    "rollup-plugin-babel-minify": "^5.0.0",
     "tslint": "^5.11.0",
     "typescript": "^2.9.2"
   }
