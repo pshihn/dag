@@ -8,7 +8,8 @@
   "jsnext:main": "dist/dag.js",
   "types": "dist/dag.d.ts",
   "scripts": {
-    "build": "tsc && rollup -c"
+    "build": "tsc && rollup -c",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
   },
   "homepage": "https://github.com/pshihn/dag#readme",
   "devDependencies": {
+    "jest": "^23.4.1",
     "rollup": "^0.63.4",
     "rollup-plugin-babel-minify": "^5.0.0",
     "tslint": "^5.11.0",
