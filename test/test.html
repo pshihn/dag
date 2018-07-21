@@ -1,0 +1,27 @@
+<html>
+
+<head></head>
+
+<body>
+  <script type="module">
+    import { DAG } from '../dist/adag.m.js';
+
+    const dag = new DAG();
+    const names = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'];
+    for (const n of names) {
+      dag.addVertex({ id: n });
+    }
+    dag.addEdge(
+      ['a', 'c'], ['a', 'd'],
+      ['b', 'd'], ['b', 'e'],
+      ['d', 'f'], ['d', 'g'],
+      ['g', 'i'],
+      ['h', 'i']
+    );
+    console.log('a', dag.toposort('a'));
+    dag.removeVertex('g');
+    console.log('a', dag.toposort('a'));
+  </script>
+</body>
+
+</html>

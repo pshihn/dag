@@ -2,13 +2,13 @@
   "name": "adag",
   "version": "0.0.1",
   "description": "Yet another directed acyclic graph library",
-  "main": "dist/dag.umd.js",
-  "umd:main": "dist/dag.umd.js",
-  "module": "dist/dag.m.js",
-  "jsnext:main": "dist/dag.js",
+  "main": "dist/adag.js",
+  "umd:main": "dist/adag.umd.js",
+  "module": "dist/adag.m.js",
   "types": "dist/dag.d.ts",
   "scripts": {
-    "build": "tsc && rollup -c",
+    "build": "tsc && microbundle -i dist/dag.js",
+    "build2": "tsc && microbundle --strict --target browser --compress false -i dist/dag.js",
     "test": "jest"
   },
   "repository": {
@@ -23,8 +23,7 @@
   "homepage": "https://github.com/pshihn/dag#readme",
   "devDependencies": {
     "jest": "^23.4.1",
-    "rollup": "^0.63.4",
-    "rollup-plugin-babel-minify": "^5.0.0",
+    "microbundle": "^0.6.0",
     "tslint": "^5.11.0",
     "typescript": "^2.9.2"
   }
